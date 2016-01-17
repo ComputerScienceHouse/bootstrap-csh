@@ -78,7 +78,7 @@ grunt.initConfig({
       files: [ 'dev/members.less' ],
       tasks: [ 'less:members', 'cssmin:members' ]
     },
-     members: {
+     membersflat: {
       files: [ 'dev/members-flat.less' ],
       tasks: [ 'less:membersflat', 'cssmin:membersflat' ]
     },
