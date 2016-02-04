@@ -115,7 +115,7 @@ grunt.initConfig({
         base: './',
         hostname: '*',
         open: {
-          target: 'http://localhost:9000/test/membersflat'
+          target: 'http://localhost:9000/test/members-flat'
         }
       }
     },
