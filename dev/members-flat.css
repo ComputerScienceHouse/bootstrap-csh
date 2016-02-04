@@ -367,8 +367,8 @@ a.btn {
   color: #ffa00c;
 }
 .alert.alert-danger {
-  background-color: #f3a3b9;
-  border-color: #ee7596;
+  background-color: #f6b9ca;
+  border-color: #f18ca7;
   color: #e11c52;
 }
 /*
@@ -457,8 +457,8 @@ a.btn {
   border-color: #f9d0db;
 }
 .panel.panel-danger .panel-heading {
-  background-color: #f3a3b9;
-  border-color: #ee7596;
+  background-color: #f6b9ca;
+  border-color: #f18ca7;
   border-bottom: 2px solid #e11c52;
   color: #e11c52;
 }
