@@ -31,18 +31,6 @@ grunt.initConfig({
         dest: 'release/',
         ext: '.min.css'
       }]
-    },
-    public: {
-      options: {
-        banner: '/*! <%= pkg.name %>/public.min.css, v<%= pkg.version %>, minified <%= grunt.template.today("yyyy-mm-dd") %> */'
-      },
-      files: [{
-        expand: true,
-        cwd: 'dev/',
-        src: ['public.css'],
-        dest: 'release/',
-        ext: '.min.css'
-      }]
     }
   },
   // Compile LESS to CSS
@@ -62,14 +50,6 @@ grunt.initConfig({
       files: {
         'dev/members-flat.css': 'dev/members-flat.less'
       }
-    },
-    public: {
-      options: {
-        paths: ['dev/']
-      },
-      files: {
-        'dev/public.css': 'dev/public.less'
-      }
     }
   },
   // Watch for changes
@@ -81,10 +61,6 @@ grunt.initConfig({
      membersflat: {
       files: [ 'dev/members-flat.less' ],
       tasks: [ 'less:membersflat', 'cssmin:membersflat' ]
-    },
-    public: {
-      files: [ 'dev/public.less' ],
-      tasks: [ 'less:public', 'cssmin:public' ]
     }
   },
   // Run a local server
@@ -118,17 +94,6 @@ grunt.initConfig({
           target: 'http://localhost:9000/test/members-flat'
         }
       }
-    },
-    public: {
-      options: {
-        port: 9000,
-        keepalive: true,
-        base: './',
-        hostname: '*',
-        open: {
-          target: 'http://localhost:9000/test/public'
-        }
-      }
     }
   }
 });
@@ -143,14 +108,11 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.registerTask('default', ['less', 'cssmin']);
 grunt.registerTask('defaultMembers', ['less:members', 'cssmin:members']);
 grunt.registerTask('defaultMembersFlat', ['less:membersflat', 'cssmin:membersflat']);
-grunt.registerTask('defaultPublic', ['less:public', 'cssmin:public']);
 grunt.registerTask('dev', ['default', 'watch']);
 grunt.registerTask('devMembers', ['defaultMembers', 'watch:members']);
 grunt.registerTask('devMembersFlat', ['defaultMembersFlat', 'watch:membersflat']);
-grunt.registerTask('devPublic', ['defaultPublic', 'watch:public']);
 grunt.registerTask('test', ['connect:default']);
 grunt.registerTask('testMembers', ['connect:members']);
 grunt.registerTask('testMembersFlat', ['connect:membersflat']);
-grunt.registerTask('testPublic', ['connect:public']);
 
 };
