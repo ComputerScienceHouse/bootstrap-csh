@@ -143,14 +143,11 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.registerTask('default', ['less', 'cssmin']);
 grunt.registerTask('defaultMembers', ['less:members', 'cssmin:members']);
 grunt.registerTask('defaultMembersFlat', ['less:membersflat', 'cssmin:membersflat']);
-grunt.registerTask('defaultPublic', ['less:public', 'cssmin:public']);
 grunt.registerTask('dev', ['default', 'watch']);
 grunt.registerTask('devMembers', ['defaultMembers', 'watch:members']);
 grunt.registerTask('devMembersFlat', ['defaultMembersFlat', 'watch:membersflat']);
-grunt.registerTask('devPublic', ['defaultPublic', 'watch:public']);
 grunt.registerTask('test', ['connect:default']);
 grunt.registerTask('testMembers', ['connect:members']);
 grunt.registerTask('testMembersFlat', ['connect:membersflat']);
-grunt.registerTask('testPublic', ['connect:public']);
 
 };
